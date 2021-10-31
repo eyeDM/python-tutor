@@ -1,10 +1,10 @@
 N = int(input())
 S = 0
 
-for i in range(N + 1):
+for i in range(1, N + 1):
 	S += i
 
-for i in range(1, N):
+for j in range(N - 1):
 	S -= int(input())
 
 print(S)

@@ -84,3 +84,150 @@ while x != 0:
 		max = x
 
 print(max)
+
+# Индекс максимума последовательности
+x = 1
+i = 0
+maxValue = 0
+maxValueIdx = 0
+
+while x != 0:
+	x = int(input())
+	if x > maxValue:
+		maxValue = x
+		maxValueIdx = i
+	i += 1
+
+print(maxValueIdx)
+
+# Количество четных элементов последовательности
+n = 0
+x = 1
+
+while True:
+	x = int(input())
+	if x == 0:
+		break
+	if x % 2 == 0:
+		n += 1
+
+print(n)
+
+# Количество элементов, которые больше предыдущего
+n = 0
+x = 1
+xPrev = 0
+
+while x != 0:
+	x = int(input())
+	if xPrev != 0 and x > xPrev:
+		n += 1
+	xPrev = x
+
+print(n)
+
+# Второй максимум
+max = 0
+max2 = 0
+x = 1
+
+while x != 0:
+	x = int(input())
+	if x > max:
+		max2 = max
+		max = x
+	elif x > max2:
+		max2 = x
+
+print(max2)
+
+# Количество элементов, равных максимуму
+n = 1
+max = 0
+x = 1
+
+while x != 0:
+	x = int(input())
+	if x > max:
+		max = x
+		n = 1
+	elif x == max:
+		n += 1
+
+print(n)
+
+# Числа Фибоначчи
+n = int(input())
+Fn = 0
+Fnext = 1
+
+for i in range(n):
+	Fn, Fnext = Fnext, Fnext + Fn
+
+print(Fn)
+
+# Номер числа Фибоначчи
+A = int(input())
+n = -1
+F = 0
+Fnext = 1
+i = 0
+
+while True:
+	if A < F:
+		break
+
+	if A == F:
+		n = i
+		break
+
+	F, Fnext = Fnext, Fnext + F
+	i += 1
+
+print(n)
+
+# Максимальное число идущих подряд равных элементов
+n = 1
+nMax = 1
+x = 1
+xPrev = 0
+
+while True:
+	x = int(input())
+	if x == 0:
+		break
+
+	if x == xPrev:
+		n += 1
+		if n > nMax:
+			nMax = n
+	else:
+		n = 1
+
+	xPrev = x
+
+print(nMax)
+
+# Стандартное отклонение
+data = []
+n = 0
+sum = 0
+
+while True:
+	x = int(input())
+	if x == 0:
+		break
+
+	data.append(x)
+	n += 1
+	sum += x
+
+mean = sum / n
+qSum = 0
+
+for x in data:
+	qSum += (x - mean) ** 2
+
+stddev = (qSum / (n - 1)) ** 0.5
+
+print(stddev)
